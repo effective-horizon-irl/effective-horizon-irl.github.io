@@ -182,25 +182,52 @@
         
         <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/lp_env_summary_Gridworld-simple.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/lp_env_summary_Gridworld-simple.jpg" alt="lp_env_summary_Gridworld-simple">
-            </object>
-            <object data="./static/images/lp_env_summary_Gridworld-hard.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/lp_env_summary_Gridworld-hard.jpg" alt="lp_env_summary_Gridworld-hard">
-            </object>
-            <object data="./static/images/lp_env_summary_Objectworld-linear.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/lp_env_summary_Objectworld-linear.jpg" alt="lp_env_summary_Objectworld-linear">
-            </object>
-            <object data="./static/images/lp_env_summary_Objectworld-non_linear.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/lp_env_summary_Objectworld-non_linear.jpg" alt="lp_env_summary_Objectworld-non_linear">
-            </object>
-            <figcaption class="has-text-centered">Summary of LP-IRL with varying discount factors across four tasks.</figcaption>
+            <!-- Wrap all objects and caption in a <figure> (semantic markup) -->
+            <figure>
+              <object data="./static/images/lp_env_summary_Gridworld-simple.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/lp_env_summary_Gridworld-simple.jpg" 
+                     alt="lp_env_summary_Gridworld-simple">
+              </object>
+        
+              <object data="./static/images/lp_env_summary_Gridworld-hard.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/lp_env_summary_Gridworld-hard.jpg" 
+                     alt="lp_env_summary_Gridworld-hard">
+              </object>
+        
+              <object data="./static/images/lp_env_summary_Objectworld-linear.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/lp_env_summary_Objectworld-linear.jpg" 
+                     alt="lp_env_summary_Objectworld-linear">
+              </object>
+        
+              <object data="./static/images/lp_env_summary_Objectworld-non_linear.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/lp_env_summary_Objectworld-non_linear.jpg" 
+                     alt="lp_env_summary_Objectworld-non_linear">
+              </object>
+        
+              <!-- The figcaption goes under all objects -->
+              <figcaption class="has-text-centered">
+                Summary of LP-IRL with varying discount factors across four tasks.
+              </figcaption>
+            </figure>
+        
+            <!-- Now place your paragraph below the figure -->
+            <p>
+              The <em>error counts</em> measure the number of states for which 
+              a policy's action selection deviates from the expert's actions.
+              Each task displays the ground-truth value function (column 1), 
+              reward function (column 2), expert policy (column 3), error count 
+              curves for different amount of expert data in a 
+              <strong>single instance</strong> (columns 4–8), and the error count
+              curve summary for a <strong>batch</strong> of 10 MDPs across varying 
+              amount of expert data (column 9). In all four tasks, ground-truth 
+              discount factor is 0.99. The optimal discount factor is smaller than 
+              the ground-truth value for varying amount of expert data.
+            </p>
           </div>
-          <p>The <em>error counts</em> measure the number of states for which a policy's action selection deviates from the expert's actions. Each task displays the ground-truth value function (column 1), reward function (column 2), expert policy (column 3), error count curves for different amount of expert data in a <strong>single instance</strong> (columns 4-8), and the error count curve summary for a <strong>batch</strong> of 10 MDPs across varying amount of expert data (column 9). In all four tasks, ground-truth discount factor is 0.99. The optimal discount factor is smaller than the ground-truth value for varying amount of expert data.</p>
         </div>
 
         <div class="columns is-centered">
