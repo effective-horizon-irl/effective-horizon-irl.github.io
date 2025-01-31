@@ -150,7 +150,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Inverse reinforcement learning (IRL) algorithms often rely on (forward) reinforcement learning or planning over a given time horizon to compute an approximately optimal policy for a hypothesized reward function and then match this policy with expert demonstrations. The time horizon plays a critical role in determining both the accuracy of reward estimates and the computational efficiency of IRL algorithms. Interestingly, an \emph{effective time horizon} shorter than the ground-truth value often produces better results faster. This work formally analyzes this phenomenon and provides an explanation: the time horizon controls the complexity of an induced policy class and mitigates overfitting with limited data. This analysis serves as a guide for the principled choice of the effective horizon for IRL. It also prompts us to re-examine the classic IRL formulation: it is more natural to learn jointly the reward and the effective horizon  rather than the reward alone with a given horizon. To  validate our findings, we implement a cross-validation extension and the experimental results confirm the theoretical analysis.
+            Inverse reinforcement learning (IRL) algorithms often rely on (forward) reinforcement learning or planning over a given time horizon to compute an approximately optimal policy for a hypothesized reward function and then match this policy with expert demonstrations. The time horizon plays a critical role in determining both the accuracy of reward estimates and the computational efficiency of IRL algorithms. Interestingly, an <em>effective time horizon</em> shorter than the ground-truth value often produces better results faster. This work formally analyzes this phenomenon and provides an explanation: the time horizon controls the complexity of an induced policy class and mitigates overfitting with limited data. This analysis serves as a guide for the principled choice of the effective horizon for IRL. It also prompts us to re-examine the classic IRL formulation: it is more natural to learn jointly the reward and the effective horizon  rather than the reward alone with a given horizon. To  validate our findings, we implement a cross-validation extension and the experimental results confirm the theoretical analysis.
           </p>
         </div>
       </div>
@@ -198,18 +198,20 @@
               <!-- Fallback content for browsers that don't support the object tag -->
               <img src="./static/images/lp_env_summary_Objectworld-non_linear.jpg" alt="lp_env_summary_Objectworld-non_linear">
             </object>
-            <figcaption class="has-text-centered">Summary of LP-IRL with varying discount factors across four tasks. The \textit{error counts} measure the number of states for which a policy's action selection deviates from the expert's actions. Each task displays the ground-truth value function (column 1), reward function (column 2), expert policy (column 3), error count curves for different amount of expert data in a \textbf{single instance} (columns 4-8), and the error count curve summary for a \textbf{batch} of 10 MDPs across varying amount of expert data (column 9). In all four tasks, ground-truth discount factor is 0.99. The optimal discount factor is smaller than the ground-truth value for varying amount of expert data.</figcaption>
+            <figcaption class="has-text-centered">Summary of LP-IRL with varying discount factors across four tasks.</figcaption>
           </div>
+          <p>The <em>error counts</em> measure the number of states for which a policy's action selection deviates from the expert's actions. Each task displays the ground-truth value function (column 1), reward function (column 2), expert policy (column 3), error count curves for different amount of expert data in a <strong>single instance</strong> (columns 4-8), and the error count curve summary for a <strong>batch</strong> of 10 MDPs across varying amount of expert data (column 9). In all four tasks, ground-truth discount factor is 0.99. The optimal discount factor is smaller than the ground-truth value for varying amount of expert data.</p>
+        </div>
 
+        <div class="columns is-centered">
           <div class="column is-full">
             <object data="./static/images/lp_coverage_vs_gammas.jpg" type="image/jpeg" width="100%" >
               <!-- Fallback content for browsers that don't support the object tag -->
               <img src="./static/images/lp_coverage_vs_gammas.jpg" alt="lp_coverage_vs_gammas">
             </object>
-            <figcaption class="has-text-centered">Optimal discount factors for LP-IRL at varying amount of expert data. For each task, we select the optimal discount factors for all 10 sampled environments through cross-validation. The orange curves illustrate how the optimal discount factor changes with the amount of expert data, while the green curves show the corresponding error counts. The ground-truth value (0.99) is depicted in grey, with its error counts displayed in blue. As the amount of expert data increases, the optimal discount factor initially decreases sharply and then gradually increases, indicating that overfitting is prominent when expert data is scarce.</figcaption>
+            <figcaption class="has-text-centered">Optimal discount factors for LP-IRL at varying amount of expert data. </figcaption>
           </div>
-
-        
+          <p>For each task, we select the optimal discount factors for all 10 sampled environments through cross-validation. The orange curves illustrate how the optimal discount factor changes with the amount of expert data, while the green curves show the corresponding error counts. The ground-truth value (0.99) is depicted in grey, with its error counts displayed in blue. As the amount of expert data increases, the optimal discount factor initially decreases sharply and then gradually increases, indicating that overfitting is prominent when expert data is scarce.</p>  
         </div>
 
         <div class="columns is-centered">
@@ -230,17 +232,20 @@
               <!-- Fallback content for browsers that don't support the object tag -->
               <img src="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" alt="maxent_env_summary_Objectworld-non_linear">
             </object>
-            <figcaption class="has-text-centered">Summary of MaxEnt-IRL with different horizons for the four tasks. For each task, we present the ground-truth value function (column 1), ground-truth reward function (column 2), expert policy (column 3), error count curves in all states for different amount of expert data for a \textbf{single instance} of the task (columns 4-8), and finally, a summary of the error curves for a \textbf{batch} of 10 MDPs (column 9). In all four tasks, the ground-truth horizon is 20. The optimal horizon is smaller than the ground-truth value for varying amount of expert data.</figcaption>
+            <figcaption class="has-text-centered">Summary of MaxEnt-IRL with different horizons for the four tasks. </figcaption>
           </div>
+          <p>For each task, we present the ground-truth value function (column 1), ground-truth reward function (column 2), expert policy (column 3), error count curves in all states for different amount of expert data for a <strong>single instance</strong> of the task (columns 4-8), and finally, a summary of the error curves for a <strong>batch</strong> of 10 MDPs (column 9). In all four tasks, the ground-truth horizon is 20. The optimal horizon is smaller than the ground-truth value for varying amount of expert data.</p>
+        </div>
 
+        <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/maxent_coverage_vs_gammas.jpg" type="image/jpeg" width="100%" >
+            <object data="./static/images/maxent_coverage_vs_horizons.jpg" type="image/jpeg" width="100%" >
               <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_coverage_vs_gammas.jpg" alt="maxent_coverage_vs_gammas">
+              <img src="./static/images/maxent_coverage_vs_horizons.jpg" alt="maxent_coverage_vs_horizons">
             </object>
-            <figcaption class="has-text-centered">Optimal horizons for MaxEnt-IRL at varying amount of expert data. We select the optimal horizon values for each of 10 sampled task environments using cross-validation, based on the amount of expert data. Orange curves show how optimal horizon value changes with the amount of expert data, while green curves display corresponding error counts. The ground-truth horizon (20) is depicted by a grey line, with corresponding error lines in blue. The trends are consistent with LP-IRL.</figcaption>
+            <figcaption class="has-text-centered">Optimal horizons for MaxEnt-IRL at varying amount of expert data.</figcaption>
           </div>
-
+          <p> We select the optimal horizon values for each of 10 sampled task environments using cross-validation, based on the amount of expert data. Orange curves show how optimal horizon value changes with the amount of expert data, while green curves display corresponding error counts. The ground-truth horizon (20) is depicted by a grey line, with corresponding error lines in blue. The trends are consistent with LP-IRL.</p>
         </div>
       </div>
     </div>
