@@ -178,7 +178,7 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Experimental Validation</h2>
-        <p>We empirically examine our theoretical findings by exploring how discount factors influence IRL performance with varying amounts of expert data. We adapt Linear Programming IRL (LP-IRL) and Maximum Entropy IRL (MaxEnt-IRL) to accommodate different discount factor settings and expert data sizes. Specifically, We evaluate the performance of LP-IRL and MaxEnt-IRL on four Gridworld and Objectworld tasks with varying reward complexity. To jointly learn the reward-horizon pair, we incorporate cross-validation into our modified IRL methods to optimize the discount factor. By evaluating policies across a range of discount factors/horizons, cross-validation allows us to directly observe how varying b𝛾 affects IRL performance with different amounts of expert data.</p>
+        <p class="mb-5">We empirically examine our theoretical findings by exploring how discount factors influence IRL performance with varying amounts of expert data. We adapt Linear Programming IRL (LP-IRL) and Maximum Entropy IRL (MaxEnt-IRL) to accommodate different discount factor settings and expert data sizes. Specifically, We evaluate the performance of LP-IRL and MaxEnt-IRL on four Gridworld and Objectworld tasks with varying reward complexity. To jointly learn the reward-horizon pair, we incorporate cross-validation into our modified IRL methods to optimize the discount factor. By evaluating policies across a range of discount factors/horizons, cross-validation allows us to directly observe how varying b𝛾 affects IRL performance with different amounts of expert data.</p>
         
         <div class="columns is-centered">
           <div class="column is-full">
@@ -215,7 +215,7 @@
             </figure>
         
             <!-- Now place your paragraph below the figure -->
-            <p>
+            <p class="mb-5">
               The <em>error counts</em> measure the number of states for which 
               a policy's action selection deviates from the expert's actions.
               Each task displays the ground-truth value function (column 1), 
@@ -232,48 +232,111 @@
 
         <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/lp_coverage_vs_gammas.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/lp_coverage_vs_gammas.jpg" alt="lp_coverage_vs_gammas">
-            </object>
-            <figcaption class="has-text-centered">Optimal discount factors for LP-IRL at varying amount of expert data. </figcaption>
+        
+            <!-- Wrap the image/object and the caption in a <figure> -->
+            <figure>
+              <object data="./static/images/lp_coverage_vs_gammas.jpg" type="image/jpeg" width="100%">
+                <!-- Fallback content for browsers that don't support <object> -->
+                <img src="./static/images/lp_coverage_vs_gammas.jpg" alt="lp_coverage_vs_gammas">
+              </object>
+              <figcaption class="has-text-centered">
+                Optimal discount factors for LP-IRL at varying amount of expert data.
+              </figcaption>
+            </figure>
+        
+            <!-- Place the paragraph below the figure -->
+            <p class="mb-5">
+              For each task, we select the optimal discount factors for all 10 sampled 
+              environments through cross-validation. The orange curves illustrate how the 
+              optimal discount factor changes with the amount of expert data, while the 
+              green curves show the corresponding error counts. The ground-truth value 
+              (0.99) is depicted in grey, with its error counts displayed in blue. As the 
+              amount of expert data increases, the optimal discount factor initially 
+              decreases sharply and then gradually increases, indicating that overfitting 
+              is prominent when expert data is scarce.
+            </p>
+        
           </div>
-          <p>For each task, we select the optimal discount factors for all 10 sampled environments through cross-validation. The orange curves illustrate how the optimal discount factor changes with the amount of expert data, while the green curves show the corresponding error counts. The ground-truth value (0.99) is depicted in grey, with its error counts displayed in blue. As the amount of expert data increases, the optimal discount factor initially decreases sharply and then gradually increases, indicating that overfitting is prominent when expert data is scarce.</p>  
         </div>
+        
 
+        <!-- First group of images and text -->
         <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/maxent_env_summary_Gridworld-simple.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_env_summary_Gridworld-simple.jpg" alt="maxent_env_summary_Gridworld-simple">
-            </object>
-            <object data="./static/images/maxent_env_summary_Gridworld-hard.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_env_summary_Gridworld-hard.jpg" alt="maxent_env_summary_Gridworld-hard">
-            </object>
-            <object data="./static/images/maxent_env_summary_Objectworld-linear.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_env_summary_Objectworld-linear.jpg" alt="maxent_env_summary_Objectworld-linear">
-            </object>
-            <object data="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" alt="maxent_env_summary_Objectworld-non_linear">
-            </object>
-            <figcaption class="has-text-centered">Summary of MaxEnt-IRL with different horizons for the four tasks. </figcaption>
+            <!-- Wrap the objects and figcaption together in a <figure> -->
+            <figure>
+              <object data="./static/images/maxent_env_summary_Gridworld-simple.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/maxent_env_summary_Gridworld-simple.jpg" 
+                    alt="maxent_env_summary_Gridworld-simple">
+              </object>
+
+              <object data="./static/images/maxent_env_summary_Gridworld-hard.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/maxent_env_summary_Gridworld-hard.jpg" 
+                    alt="maxent_env_summary_Gridworld-hard">
+              </object>
+
+              <object data="./static/images/maxent_env_summary_Objectworld-linear.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/maxent_env_summary_Objectworld-linear.jpg" 
+                    alt="maxent_env_summary_Objectworld-linear">
+              </object>
+
+              <object data="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" 
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" 
+                    alt="maxent_env_summary_Objectworld-non_linear">
+              </object>
+
+              <figcaption class="has-text-centered">
+                Summary of MaxEnt-IRL with different horizons for the four tasks.
+              </figcaption>
+            </figure>
+
+            <!-- Paragraph goes under the figure -->
+            <p class="mb-5">
+              For each task, we present the ground-truth value function (column 1),
+              ground-truth reward function (column 2), expert policy (column 3),
+              error count curves in all states for different amount of expert data
+              for a <strong>single instance</strong> of the task (columns 4–8),
+              and finally, a summary of the error curves for a <strong>batch</strong>
+              of 10 MDPs (column 9). In all four tasks, the ground-truth horizon is 20.
+              The optimal horizon is smaller than the ground-truth value for varying
+              amount of expert data.
+            </p>
           </div>
-          <p>For each task, we present the ground-truth value function (column 1), ground-truth reward function (column 2), expert policy (column 3), error count curves in all states for different amount of expert data for a <strong>single instance</strong> of the task (columns 4-8), and finally, a summary of the error curves for a <strong>batch</strong> of 10 MDPs (column 9). In all four tasks, the ground-truth horizon is 20. The optimal horizon is smaller than the ground-truth value for varying amount of expert data.</p>
         </div>
 
+        <!-- Second group of images and text -->
         <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/maxent_coverage_vs_horizons.jpg" type="image/jpeg" width="100%" >
-              <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/maxent_coverage_vs_horizons.jpg" alt="maxent_coverage_vs_horizons">
-            </object>
-            <figcaption class="has-text-centered">Optimal horizons for MaxEnt-IRL at varying amount of expert data.</figcaption>
+            <!-- Again, wrap the image and caption in a <figure> -->
+            <figure>
+              <object data="./static/images/maxent_coverage_vs_horizons.jpg"
+                      type="image/jpeg" width="100%">
+                <img src="./static/images/maxent_coverage_vs_horizons.jpg"
+                    alt="maxent_coverage_vs_horizons">
+              </object>
+
+              <figcaption class="has-text-centered">
+                Optimal horizons for MaxEnt-IRL at varying amount of expert data.
+              </figcaption>
+            </figure>
+
+            <!-- Paragraph below the figure -->
+            <p class="mb-5">
+              We select the optimal horizon values for each of 10 sampled task
+              environments using cross-validation, based on the amount of expert data.
+              Orange curves show how optimal horizon value changes with the amount of
+              expert data, while green curves display corresponding error counts. The
+              ground-truth horizon (20) is depicted by a grey line, with corresponding
+              error lines in blue. The trends are consistent with LP-IRL.
+            </p>
           </div>
-          <p> We select the optimal horizon values for each of 10 sampled task environments using cross-validation, based on the amount of expert data. Orange curves show how optimal horizon value changes with the amount of expert data, while green curves display corresponding error counts. The ground-truth horizon (20) is depicted by a grey line, with corresponding error lines in blue. The trends are consistent with LP-IRL.</p>
         </div>
+
+        
       </div>
     </div>
 
