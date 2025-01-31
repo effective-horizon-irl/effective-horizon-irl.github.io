@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Set It Up!: Functional Object Arrangement with Compositional Generative Models">
-  <meta name="keywords" content="Object Arrangement, Goal Specification, Grounding Underspecified Instructions">
+        content="On the Effective Horizon of Inverse Reinforcement Learning">
+  <meta name="keywords" content="Inverse Reinforcement Learning; Imitation Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>"Set It Up!": Functional Object Arrangement with Compositional Generative Models</title>
+  <title>On the Effective Horizon of Inverse Reinforcement Learning</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -54,7 +54,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://arxiv.org/abs/2405.11928">
+      <a class="navbar-item" href="https://arxiv.org/abs/2307.06541">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -71,39 +71,30 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">"Set It Up!": Functional Object Arrangement with Compositional Generative Models</h1>
+          <h1 class="title is-1 publication-title">On the Effective Horizon of Inverse Reinforcement Learning</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               Yiqing Xu<sup>1</sup>,
             </span>
             <span class="author-block">
-              Jiayuan Mao<sup>2</sup>,
+              Finale Doshi-Velez<sup>2</sup>,
             </span>
             <span class="author-block">
-              Yilun Du<sup>2</sup>,
-            </span>
-            <span class="author-block">
-              Tomas Lozáno-Pérez<sup>2</sup>,
-            </span>
-            <span class="author-block">
-              Leslie Pack Kaebling<sup>2</sup>,
-            </span>
-            <span class="author-block">
-              David Hsu<sup>1</sup>
+              David Hsu<sup>1</sup>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>School of Computing,
               Smart System Institute, National University of Singapore</span>
-            <span class="author-block"><sup>2</sup>CSAIL, Massachusetts Institute of Technology</span>
+            <span class="author-block"><sup>2</sup>Department of Computer Science, Harvard University</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2405.11928"
+                <a href="https://arxiv.org/pdf/2307.06541"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -112,7 +103,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2405.11928"
+                <a href="https://arxiv.org/abs/2307.06541"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -121,12 +112,12 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://github.com/eeching/Effective_Horizon_IRL"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (to be released)</span>
+                  <span>Code</span>
                   </a>
               </span>
             </div>
@@ -143,8 +134,8 @@
     <div class="hero-body">
       <div class="columns is-centered">
         <div class="column is-full">
-          <img id="teaserGif" src="./static/images/setitup.gif" alt="Teaser GIF" style="width: 100%; height: auto;">
-          <figcaption class="subtitle has-text-centered">Given the underspecified instruction, 'Set up a table for my breakfast, please!', SetItUp interprets this concept and proposes the object layout for the breakfast setup.</figcaption>
+          <img id="teaserGif" src="./static/images/ehril_hook.gif" alt="Teaser GIF" style="width: 100%; height: auto;">
+          <figcaption class="subtitle has-text-centered">We investigate why, in Inverse Reinforcement Learning, an effective time horizon shorter than the ground-truth value often produces better results faster.</figcaption>
         </div>
       </div>
     </div>
@@ -159,11 +150,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper studies the challenge of developing robots capable of understanding under-specified instructions for creating functional object arrangements, such as "set up a dining table for two"; previous arrangement approaches have focused on much more explicit instructions, such as "put object A on the table."
-            We introduce a framework, \( \textit{SetItUp} \), for learning to interpret under-specified instructions. SetItUp takes a small number of training examples and a human-crafted program sketch to uncover arrangement rules for specific scene types.
-            By leveraging an intermediate graph-like representation of \( \textit{abstract spatial relationships} \) among objects, SetItUp decomposes the arrangement problem into two subproblems: i) learning the arrangement patterns from limited data and ii) grounding these abstract relationships into object poses.
-            SetItUp leverages large language models (LLMs) to propose the abstract spatial relationships among objects in novel scenes as the constraints to be satisfied; then, it composes a library of diffusion models associated with these abstract relationships to find object poses that satisfy the constraints.
-            We validate our framework on a dataset comprising study desks, dining tables, and coffee tables, with the results showing superior performance in generating physically plausible, functional, and aesthetically pleasing object arrangements compared to existing models.
+            Inverse reinforcement learning (IRL) algorithms often rely on (forward) reinforcement learning or planning over a given time horizon to compute an approximately optimal policy for a hypothesized reward function and then match this policy with expert demonstrations. The time horizon plays a critical role in determining both the accuracy of reward estimates and the computational efficiency of IRL algorithms. Interestingly, an \emph{effective time horizon} shorter than the ground-truth value often produces better results faster. This work formally analyzes this phenomenon and provides an explanation: the time horizon controls the complexity of an induced policy class and mitigates overfitting with limited data. This analysis serves as a guide for the principled choice of the effective horizon for IRL. It also prompts us to re-examine the classic IRL formulation: it is more natural to learn jointly the reward and the effective horizon  rather than the reward alone with a given horizon. To  validate our findings, we implement a cross-validation extension and the experimental results confirm the theoretical analysis.
           </p>
         </div>
       </div>
@@ -175,56 +162,86 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    
-
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method Overview</h2>   
+        <h2 class="title is-3">Theortical Insight</h2>   
         <div class="content has-text-justified">
-          <object data="./static/images/method-overview.jpg" type="image/jpeg" width="100%">
+          <object data="./static/images/loss_decomposition.gif" type="image/gif" width="100%">
             <!-- Fallback content for browsers that don't support the object tag -->
-            <img src="./static/images/method-overview.jpg" alt="Method Overview">
+            <img src="./static/images/loss_decomposition.gif" alt="Loss Decomposition">
           </object>
-          <p>Overall architecture of SetItUp. Given a novel instruction \( \textit{desc} \) and a set of objects \( \mathcal{O} \), we first query an LLM to induce an abstract spatial relationship description of the target object arrangements. The input to the LLM also includes a handful of training examples \( \mathcal{D} \) and a human-defined task-family sketch. Next, we ground these abstract relationships into object poses by composing a library of diffusion models to generate object poses that simultaneously comply with all proposed spatial relationships.</p>
+          <p>We present a formal analysis showing that, with limited expert data, using a shorter discount factor or time horizon improves the generalization of the learned reward function to unseen states. In IRL settings where the effective horizon varies, the performance gap between the induced policy and the expert policy arises from two sources: (i) reward estimation error due to limited data during IRL, and (ii) policy optimization error from using an effective horizon shorter than the ground-truth. We prove that the effective horizon controls the complexity of the approximated policy class during IRL. As the horizon increases, reward estimation error grows—overfitting occurs because we estimate policies from a more complex class using limited expert data. On the other hand, as the horizon approaches the ground-truth, the policy optimization error decreases. These opposing errors suggest that an intermediate effective horizon balances this trade-off and produces the most expert-like policy.</p>
         </div>
       </div>
     </div>
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Functional Object Arrangement (FORM) for Various Task Families.</h2>
-        <div class="columns is-4">
-          <div class="column">
-            <img src="./static/images/task_family/study_desk.jpg" alt="Liquid">
-            <figcaption class="has-text-centered">Study Desks.</figcaption>
-          </div>
-          <div class="column">
-            <img src="./static/images/task_family/dining_table.jpg" alt="Fabric">
-            <figcaption class="has-text-centered">Dining Tables.</figcaption>
-          </div>
-          <div class="column">
-            <img src="./static/images/task_family/coffee_table.jpg" alt="Elasto-plastic">
-            <figcaption class="has-text-centered">Coffee Tables.</figcaption>
-          </div>
-        </div>
-        <p>We evaluated SetItUp on three task families, namely study desks, dining tables and coffee tables. They involve different types of objects, different aesthetic patterns, and different types of human needs (\eg, using a laptop vs. paper and pencil, formal dining vs. casual dining). They also progressively increase in scene complexity: the study desk has the fewest objects and important relationships, and the dining table features the most.</p>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">SetItUp vs the Baselines.</h2>
-    
+        <h2 class="title is-3">Experimental Validation</h2>
+        <p>We empirically examine our theoretical findings by exploring how discount factors influence IRL performance with varying amounts of expert data. We adapt Linear Programming IRL (LP-IRL) and Maximum Entropy IRL (MaxEnt-IRL) to accommodate different discount factor settings and expert data sizes. Specifically, We evaluate the performance of LP-IRL and MaxEnt-IRL on four Gridworld and Objectworld tasks with varying reward complexity. To jointly learn the reward-horizon pair, we incorporate cross-validation into our modified IRL methods to optimize the discount factor. By evaluating policies across a range of discount factors/horizons, cross-validation allows us to directly observe how varying b𝛾 affects IRL performance with different amounts of expert data.</p>
+        
         <div class="columns is-centered">
           <div class="column is-full">
-            <object data="./static/images/all_methods.jpg" type="image/jpeg" width="100%" >
+            <object data="./static/images/lp_env_summary_Gridworld-simple.jpg" type="image/jpeg" width="100%" >
               <!-- Fallback content for browsers that don't support the object tag -->
-              <img src="./static/images/all_methods.jpg" alt="All Methods Document">
+              <img src="./static/images/lp_env_summary_Gridworld-simple.jpg" alt="lp_env_summary_Gridworld-simple">
             </object>
-            <figcaption class="has-text-centered">We compare SetItUp with two baselines and an ablation of our method. </figcaption>
+            <object data="./static/images/lp_env_summary_Gridworld-hard.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/lp_env_summary_Gridworld-hard.jpg" alt="lp_env_summary_Gridworld-hard">
+            </object>
+            <object data="./static/images/lp_env_summary_Objectworld-linear.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/lp_env_summary_Objectworld-linear.jpg" alt="lp_env_summary_Objectworld-linear">
+            </object>
+            <object data="./static/images/lp_env_summary_Objectworld-non_linear.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/lp_env_summary_Objectworld-non_linear.jpg" alt="lp_env_summary_Objectworld-non_linear">
+            </object>
+            <figcaption class="has-text-centered">Summary of LP-IRL with varying discount factors across four tasks. The \textit{error counts} measure the number of states for which a policy's action selection deviates from the expert's actions. Each task displays the ground-truth value function (column 1), reward function (column 2), expert policy (column 3), error count curves for different amount of expert data in a \textbf{single instance} (columns 4-8), and the error count curve summary for a \textbf{batch} of 10 MDPs across varying amount of expert data (column 9). In all four tasks, ground-truth discount factor is 0.99. The optimal discount factor is smaller than the ground-truth value for varying amount of expert data.</figcaption>
           </div>
+
+          <div class="column is-full">
+            <object data="./static/images/lp_coverage_vs_gammas.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/lp_coverage_vs_gammas.jpg" alt="lp_coverage_vs_gammas">
+            </object>
+            <figcaption class="has-text-centered">Optimal discount factors for LP-IRL at varying amount of expert data. For each task, we select the optimal discount factors for all 10 sampled environments through cross-validation. The orange curves illustrate how the optimal discount factor changes with the amount of expert data, while the green curves show the corresponding error counts. The ground-truth value (0.99) is depicted in grey, with its error counts displayed in blue. As the amount of expert data increases, the optimal discount factor initially decreases sharply and then gradually increases, indicating that overfitting is prominent when expert data is scarce.</figcaption>
+          </div>
+
+        
         </div>
-        <p>Evaluation on the generalization to novel instructions. Details on the seen-unseen splits are provided in the appendix. Our model shows the least amount of performance drop when generalizing to novel instructions.</p>
+
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <object data="./static/images/maxent_env_summary_Gridworld-simple.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/maxent_env_summary_Gridworld-simple.jpg" alt="maxent_env_summary_Gridworld-simple">
+            </object>
+            <object data="./static/images/maxent_env_summary_Gridworld-hard.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/maxent_env_summary_Gridworld-hard.jpg" alt="maxent_env_summary_Gridworld-hard">
+            </object>
+            <object data="./static/images/maxent_env_summary_Objectworld-linear.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/maxent_env_summary_Objectworld-linear.jpg" alt="maxent_env_summary_Objectworld-linear">
+            </object>
+            <object data="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/maxent_env_summary_Objectworld-non_linear.jpg" alt="maxent_env_summary_Objectworld-non_linear">
+            </object>
+            <figcaption class="has-text-centered">Summary of MaxEnt-IRL with different horizons for the four tasks. For each task, we present the ground-truth value function (column 1), ground-truth reward function (column 2), expert policy (column 3), error count curves in all states for different amount of expert data for a \textbf{single instance} of the task (columns 4-8), and finally, a summary of the error curves for a \textbf{batch} of 10 MDPs (column 9). In all four tasks, the ground-truth horizon is 20. The optimal horizon is smaller than the ground-truth value for varying amount of expert data.</figcaption>
+          </div>
+
+          <div class="column is-full">
+            <object data="./static/images/maxent_coverage_vs_gammas.jpg" type="image/jpeg" width="100%" >
+              <!-- Fallback content for browsers that don't support the object tag -->
+              <img src="./static/images/maxent_coverage_vs_gammas.jpg" alt="maxent_coverage_vs_gammas">
+            </object>
+            <figcaption class="has-text-centered">Optimal horizons for MaxEnt-IRL at varying amount of expert data. We select the optimal horizon values for each of 10 sampled task environments using cross-validation, based on the amount of expert data. Orange curves show how optimal horizon value changes with the amount of expert data, while green curves display corresponding error counts. The ground-truth horizon (20) is depicted by a grey line, with corresponding error lines in blue. The trends are consistent with LP-IRL.</figcaption>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -235,12 +252,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-    @inproceedings{xu2024set,
-      title={"Set It Up!": Functional Object Arrangement with Compositional Generative Models}, 
-      author={Yiqing Xu and Jiayuan Mao and Yilun Du and Tomas Lozáno-Pérez and Leslie Pack Kaebling and David Hsu},
-      year={2024},
-      booktitle={Robotics: Science and Systems},
-    }
+      @inproceedings{xu2025effective,
+        title={On the Effective Horizon of Inverse Reinforcement Learning},
+        author={Xu, Yiqing and Doshi-Velez, Finale and Hsu, David},
+        booktitle={International Conference on Autonomous Agents and Multiagent Systems},
+        year={2025}
+      }
 </code></pre>
   </div>
 </section>
@@ -271,6 +288,7 @@
             we just ask that you link back to this page in the footer.
             Please remember to remove the analytics code included in the header of the website which
             you do not want on your website.
+          
           </p>
         </div>
       </div>

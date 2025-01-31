@@ -1,14 +1,15 @@
-# "Set It Up!": Functional Object Arrangement with Compositional Generative Models
+# On the Effective Horizon of Inverse Reinforcement Learning
 
-This is the repository that contains source code for the [SetItUp website](https://setitup-rss.github.io).
+This is the repository that contains source code for the [SetItUp website](https://effective-horizon-irl.github.io).
 
-If you find Nerfies useful for your work please cite:
-```
-@inproceedings{xu2024set,
-      title={"Set It Up!": Functional Object Arrangement with Compositional Generative Models}, 
-      author={Yiqing Xu and Jiayuan Mao and Yilun Du and Tomas Lozáno-Pérez and Leslie Pack Kaebling and David Hsu},
-      year={2024},
-      booktitle={Robotics: Science and Systems},
+If you find this paper useful in your research, please cite our work:
+
+```bibtex
+@inproceedings{xu2025effective,
+  title={On the Effective Horizon of Inverse Reinforcement Learning},
+  author={Xu, Yiqing and Doshi-Velez, Finale and Hsu, David},
+  booktitle={International Conference on Autonomous Agents and Multiagent Systems},
+  year={2025}
 }
 ```
 
